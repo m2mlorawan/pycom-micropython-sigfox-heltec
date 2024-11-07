@@ -19,7 +19,7 @@ devices = i2c.scan()
 oled=ssd1306.SSD1306_I2C(128,64,i2c)
 sensor = ahtx0.AHT10(i2c)
 
-lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.AS923)
+lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.AS923, tx_power=14)
 app_eui = ubinascii.unhexlify('ABABABABABABABAB')
 app_key = ubinascii.unhexlify('45ADB18947EF42ADC36231E01E508499')
 dev_eui = ubinascii.unhexlify('70B3D57ED006B0AA')
