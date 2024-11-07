@@ -10,7 +10,6 @@ from ssd1306 import SSD1306_I2C
 from machine import Pin, I2C
 from time import sleep
 
-#Applications myasr6601 End devices tbeam
 led = machine.Pin('P22', machine.Pin.OUT)
 
 pin16 = machine.Pin('P8', machine.Pin.OUT)
@@ -22,8 +21,8 @@ sensor = ahtx0.AHT10(i2c)
 
 lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.AS923)
 app_eui = ubinascii.unhexlify('ABABABABABABABAB')
-app_key = ubinascii.unhexlify('45ADB18947EF42ADC36231E01E508461')
-dev_eui = ubinascii.unhexlify('70B3D57ED006B08D')
+app_key = ubinascii.unhexlify('45ADB18947EF42ADC36231E01E508499')
+dev_eui = ubinascii.unhexlify('70B3D57ED006B0AA')
 lora.join(activation=LoRa.OTAA, auth=(dev_eui, app_eui, app_key), timeout=0)
 
 oled.text("LoRaWAN Thailand",0,0)
